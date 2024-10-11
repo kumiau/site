@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Merriweather", serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,28 +18,99 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: #666;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1,
+h2,
+h3 {
+  color: #000;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 2em;
+
+
+  h1 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #ee5100;
+    text-transform: uppercase;
+  }
+
+  h2,
+  h3 {
+    font-family: "Merriweather";
+  }
+
+  h3 {
+    font-style: italic;
+
+    &::before {
+      content: '— ';
+    }
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  section>div {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 800px) {
+    display: block;
+  }
+
+}
+
+
+hgroup {
+  h1 {
+    margin-bottom: 0;
+    font-family: "Merriweather";
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    display: block;
+  }
 }
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -48,9 +119,11 @@ h1 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #3178c6aa);
 }
@@ -74,12 +147,46 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+#experience {
+
+  h2,
+  h3 {
+    font-size: 1.2em;
+    display: inline;
+  }
+
+  h4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 10px 0;
+
+  }
+
+  p {
+    margin-bottom: 50px;
+  }
+}
+
+#projects {
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: .2em;
+  }
+
+  li {
+    margin: 0;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -87,9 +194,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

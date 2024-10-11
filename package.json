@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sass": "^1.79.4",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
     "vite-plugin-markdown": "^2.2.0"
+  },
+  "dependencies": {
+    "@fontsource/merriweather": "^5.1.0",
+    "@fontsource/open-sans": "^5.1.0"
   }
 }
