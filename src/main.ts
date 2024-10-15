@@ -15,15 +15,15 @@ import "@fontsource/open-sans/700.css";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <article>
-  <header>
+  <header itemscope itemtype="http://schema.org/Person">
     <hgroup>
-      <h1>${me.title}</h1>
-      <h2>${me.description}</h2>
+      <h1 itemprop="name">${me.title}</h1>
+      <h2 itemprop="jobTitle">${me.description}</h2>
     </hgroup>
     <address>
       <ui>
-        <li>${me.location}</li>
-        <li>${me.email}</li>
+        <li><span class="city" itemprop="addressLocality">${me.city}</span>, <span class="city" itemprop="addressCountry">${me.country}</span></li>
+        <li itemprop="email">${me.email}</li>
       </ui>
     </address>
   </header>
