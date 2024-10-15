@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function l(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(e){if(e.ep)return;e.ep=!0;const n=l(e);fetch(e.href,n)}})();const i={title:"Santiago Restrepo",description:"Web Developer",location:"Bogotá, Colombia",email:"santiago@kumalabs.com"},r=`<h2>Publicis Global Delivery - Lexus.com</h2>
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function r(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(e){if(e.ep)return;e.ep=!0;const n=r(e);fetch(e.href,n)}})();const t={title:"Santiago Restrepo",description:"Web Developer",city:"Bogotá",country:"Colombia",email:"santiago@kumalabs.com"},l=`<h2>Publicis Global Delivery - Lexus.com</h2>
 <h3>Experience Technology Architect</h3>
 <h4>JUNE 2022 - AUGUST 2024</h4>
 <p>Working with a US based team on maintaining and improving the lexus.com site, implementing best practices on modular design, styling and maintaining a large codebase.</p>
@@ -84,15 +84,15 @@
 </ul>
 `;document.querySelector("#app").innerHTML=`
 <article>
-  <header>
+  <header itemscope itemtype="http://schema.org/Person">
     <hgroup>
-      <h1>${i.title}</h1>
-      <h2>${i.description}</h2>
+      <h1 itemprop="name">${t.title}</h1>
+      <h2 itemprop="jobTitle">${t.description}</h2>
     </hgroup>
     <address>
       <ui>
-        <li>${i.location}</li>
-        <li>${i.email}</li>
+        <li><span class="city" itemprop="addressLocality">${t.city}</span>, <span class="city" itemprop="addressCountry">${t.country}</span></li>
+        <li itemprop="email">${t.email}</li>
       </ui>
     </address>
   </header>
@@ -100,7 +100,7 @@
     <section>
       <div id="experience">
         <h1>Experience</h1>
-        ${r}
+        ${l}
       </div>
       <div id="expertise">
         <h1>Expertise</h1>
