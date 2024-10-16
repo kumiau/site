@@ -12,9 +12,26 @@ import "@fontsource/merriweather/700-italic.css";
 import "@fontsource/open-sans";
 import "@fontsource/open-sans/700.css";
 
+const currentYear = new Date().getFullYear();
+
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <article>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "email": "${me.email}",
+      "jobTitle": "${me.description}",
+      "name": "${me.title}",
+      "alumniOf": "${education}",
+      "url": "${me.url}",
+	    "sameAs" : [
+        "https://www.linkedin.com/in/santiago-restrepo-b6253632/",
+        "https://github.com/kumiau",
+      ]
+    }
+  </script>
   <header itemscope itemtype="http://schema.org/Person">
     <hgroup>
       <h1 itemprop="name">${me.title}</h1>
@@ -57,6 +74,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
     </section>
   </main>
+  <footer>
+    &copy; <span id="year">${currentYear}</span> by ${me.title}
+  </footer>
 </article>
 `
 

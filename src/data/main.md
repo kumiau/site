@@ -3,7 +3,8 @@ title: Santiago Restrepo
 description: Web Developer
 city: Bogotá
 country: Colombia
-email: santiago@kumalabs.com
+email: santiago@kumalabs.site
+url: kumalabs.site
 ---
 
 # Santiago Restrepo
